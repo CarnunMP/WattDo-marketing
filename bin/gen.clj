@@ -14,8 +14,8 @@
         [:meta {:charset "utf-8"}]
         [:meta {:name "viewport" :content "width=device-width,initial-scale=1"}]
         [:title "WattDo?⚡"]
-        [:link {:rel "stylesheet" :href "/styles/reset.css?v=2"}]
-        [:link {:rel "stylesheet" :href "/styles/app.css?v=2"}]
+        [:link {:rel "stylesheet" :href "../styles/reset.css?v=2"}]
+        [:link {:rel "stylesheet" :href "../styles/app.css?v=2"}]
         ;[:link {:rel "icon" :type "image/x-icon" :href "/assets/cmp.ico"}]
         ]
        hiccup-body]
@@ -41,9 +41,7 @@
                   symbol)
           _ (require sym)
           page (parse-page-body @(ns-resolve sym 'body))]
-      (if (= "pages/index" n)
-        (spit "publish/index.html" page)
-        (spit (str "publish/" n ".html") page)))))
+      (spit (str "publish/" n ".html") page))))
 
 (defn update-publish-dir []
   (reset-publish-dir!)

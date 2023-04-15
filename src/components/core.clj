@@ -3,8 +3,8 @@
 (def header
   [:div.header
    [:div.logo
-    "WattDo?X"]
+    [:h2 "WattDo?⚡"]]
    [:div.nav
-    [:a {:href "./pages/pricing.html"} "Pricing"]
-    [:a {:href "./pages/pricing.html"} "Foo"]
-    [:a {:href "./pages/pricing.html"} "Bar"]]])
+    [:a {:href "./pricing.html"} [:h3 "Pricing"]]
+    [:a {:href "./pricing.html"} [:h3 "Foo"]]
+    [:a {:href "./pricing.html"} [:h3 "Bar"]]]])
