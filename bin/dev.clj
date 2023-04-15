@@ -1,5 +1,5 @@
 (ns dev
-  (:require [clojure.java.shell :refer [sh]]
+  (:require [babashka.tasks :refer [shell]]
             [pod.babashka.fswatcher :as fw]))
 
 (defn watch []
@@ -7,8 +7,12 @@
             (fn [{:keys [type path] :as _event}]
               (when (= :write type)
                 (println "Write detected. Regenerating pages.")
-                (sh "bb gen-pages")))
-            {:delay-ms 50})
+                (shell "bb gen")
+                (println "And opening...")
+                ;; FIXME: improvement: reload current tab if already open
+                (shell "xdg-open" "publish/index.html")))
+            {:delay-ms 50
+             :recursive true})
 
-  (println "Watching /pages for changes. Ctrl-C to quit.")
+  (println "Watching current directory for changes. Ctrl-C to quit.")
   @(promise))

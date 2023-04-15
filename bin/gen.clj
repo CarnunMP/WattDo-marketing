@@ -1,5 +1,5 @@
 (ns gen
-  "As in 'generation'. This approach is inspired by https://github.com/mmzsource/mxmmz/blob/master/gen.clj :)"
+  "As in 'generation'."
   (:require [babashka.fs :as fs]
             [clojure.string :as str]
             [pod.retrogradeorbit.bootleg.utils :as bootleg.utils]))
@@ -14,6 +14,7 @@
         [:meta {:charset "utf-8"}]
         [:meta {:name "viewport" :content "width=device-width,initial-scale=1"}]
         [:title "WattDo?⚡"]
+        [:link {:rel "stylesheet" :href "/styles/reset.css?v=2"}]
         [:link {:rel "stylesheet" :href "/styles/app.css?v=2"}]
         ;[:link {:rel "icon" :type "image/x-icon" :href "/assets/cmp.ico"}]
         ]
@@ -35,10 +36,7 @@
   (fs/copy-tree "styles" "publish/styles"))
 
 (defn parse-and-copy-pages! []
-  ;; for each page
-  ;; grab body and parse
   (doseq [f (fs/list-dir "pages")]
-    (prn (str f))
     (let [n (re-find #"(?<=pages/).+(?=\.clj)" (str f))
           sym (-> n
                   (str/replace #"_" "-")
@@ -52,5 +50,4 @@
 (defn update-publish-dir []
   (reset-publish-dir!)
   (copy-css!)
-  (parse-and-copy-pages!)
-  )
+  (parse-and-copy-pages!))
