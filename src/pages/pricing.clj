@@ -1,4 +1,4 @@
-(ns pricing)
+(ns pages.pricing)
 
 (def body
   [:body
