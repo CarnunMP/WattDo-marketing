@@ -22,28 +22,26 @@
       (bootleg.utils/convert-to :html)
       (->> (str "<!DOCTYPE html>\n"))))
 
-;; main idea is:
-;; functions and hiccup in /pages
-;; use bootleg to turn them into HTML files and copy to pages
 
-;;
+;;; --- publish ---
 
 (defn reset-publish-dir! []
   (fs/delete-tree "publish")
-  (fs/create-dir "publish"))
+  (fs/create-dirs "publish/pages"))
 
 (defn copy-css! []
-  (fs/copy-tree "styles" "publish/styles"))
+  (fs/copy-tree "src/styles" "publish/styles"))
 
 (defn parse-and-copy-pages! []
-  (doseq [f (fs/list-dir "pages")]
-    (let [n (re-find #"(?<=pages/).+(?=\.clj)" (str f))
+  (doseq [f (fs/list-dir "src/pages")]
+    (let [n (re-find #"pages/.+(?=\.clj)" (str f))
           sym (-> n
                   (str/replace #"_" "-")
+                  (str/replace #"/" ".")
                   symbol)
           _ (require sym)
           page (parse-page-body @(ns-resolve sym 'body))]
-      (if (= "index" n)
+      (if (= "pages/index" n)
         (spit "publish/index.html" page)
         (spit (str "publish/" n ".html") page)))))
 

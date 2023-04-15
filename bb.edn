@@ -1,4 +1,4 @@
-{:paths ["bin" "pages"]
+{:paths ["bin" "src"]
  :pods {org.babashka/fswatcher {:version "0.0.4"}
         retrogradeorbit/bootleg {:version "0.1.9"}}
  :tasks
