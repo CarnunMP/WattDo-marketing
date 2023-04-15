@@ -10,7 +10,7 @@
                 (shell "bb gen")
                 (println "And opening...")
                 ;; FIXME: improvement: reload current tab if already open
-                (shell "xdg-open" "publish/index.html")))
+                (shell "xdg-open" "publish/pages/index.html")))
             {:delay-ms 50
              :recursive true})
 
