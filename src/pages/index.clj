@@ -22,7 +22,7 @@
       [:p "COMING SOON"]]]
     [:a.waitlist {:href "https://docs.google.com/forms/d/e/1FAIpQLScOSpyNqZNCFY-QvRAavbldD4CAe9yGYZiI1vzE9PUZVYihFA/viewform?usp=sf_link"}
      [:h3 "join the waitlist"]]]
-   [:div.features
+   #_[:div.features
     (core/feature {:heading "foo", :text "bar baz etc."}
                   {:text "fkladsjdlfk;asjd"
                    :tags [:foo.bar/baz]})
