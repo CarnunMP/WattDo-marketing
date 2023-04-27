@@ -77,7 +77,7 @@ div.card {
   align-items: center;
 }
 
-div.card h3.text {
+div.card .text {
   text-align: center;
 }
 
@@ -116,7 +116,9 @@ div.ctas {
 
 div.ctas div.platforms {
   display: flex;
-  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 div.ctas div.platforms div.platform-button {
@@ -125,6 +127,7 @@ div.ctas div.platforms div.platform-button {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: 0.5rem;
 }
 
 /* to ensure "COMING SOON" doesn't wrap */
@@ -196,4 +199,26 @@ div.feature div.text {
 
 div.feature div.text h2 {
   margin-bottom: 2rem;
+}
+
+
+/* mobile */
+
+@media screen and (max-width: 700px) {
+  div.card {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  div.banner h1 {
+    font-size: 2.5rem;
+  }
+
+  div.card .text {
+    font-size: 1rem;
+  }
+
+  div.tag {
+    font-size: 0.7rem;
+  }
 }
