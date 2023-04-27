@@ -35,6 +35,9 @@
 (defn copy-css! []
   (fs/copy-tree "src/styles" "publish/styles"))
 
+(defn copy-assets! []
+  (fs/copy-tree "assets" "publish/assets"))
+
 (defn parse-and-copy-pages! []
   (doseq [f (fs/list-dir "src/pages")]
     (let [n (re-find #"pages/.+(?=\.clj)" (str f))
@@ -49,4 +52,5 @@
 (defn update-publish-dir []
   (reset-publish-dir!)
   (copy-css!)
+  (copy-assets!)
   (parse-and-copy-pages!))

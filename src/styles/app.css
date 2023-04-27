@@ -30,7 +30,7 @@ h3 {
 /*** HEADER ***/
 
 div.header {
-  background: var(--dark-2);
+  /*background: var(--dark-2);*/
   margin-bottom: 1rem;
   height: 4rem;
   display: flex;
@@ -87,9 +87,51 @@ div.banner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin: 4rem 0;
 }
 
 div.banner h1 {
   margin-bottom: 1rem;
+}
+
+div.ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.ctas div.platforms {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+div.ctas div.platforms div.platform-button {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* to ensure "COMING SOON" doesn't wrap */
+div.ctas div.platforms div.platform-button:first-of-type {
+  width: 8rem;
+}
+
+div.platform-button p {
+  position: absolute;
+}
+
+div.platform-button img {
+  height: 100%;
+  margin: 0 1rem;
+  filter: brightness(0.2);
+}
+
+div.ctas a.waitlist {
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  background: var(--yellow-1);
+  color: var(--dark-1);
 }
