@@ -4,7 +4,7 @@
 
 (def body
   [:body
-   core/header
+   #_core/header
    [:div.banner
     [:h1 "WattDo?⚡"]
     (core/card {:text "capture and direct moments of inspiration towards ambitious, emergent ends"
