@@ -17,8 +17,8 @@
         [:link {:rel "preconnect", :href "https://fonts.googleapis.com"}]
         [:link {:rel "preconnect", :href="https://fonts.gstatic.com" :crossorigin true}]
         [:link {:rel "stylesheet" :href "https://fonts.googleapis.com/css2?family=Electrolize&display=swap"}]
-        [:link {:rel "stylesheet" :href "../styles/reset.css?v=2"}]
-        [:link {:rel "stylesheet" :href "../styles/app.css?v=2"}]
+        [:link {:rel "stylesheet" :href "./styles/reset.css?v=2"}]
+        [:link {:rel "stylesheet" :href "./styles/app.css?v=2"}]
         ;[:link {:rel "icon" :type "image/x-icon" :href "/assets/cmp.ico"}]
         ]
        hiccup-body]
@@ -29,7 +29,10 @@
 ;;; --- publish ---
 
 (defn reset-publish-dir! []
-  (fs/delete-tree "publish")
+  (when (fs/exists? "publish")
+    (doseq [f (fs/list-dir "publish")]
+      (when (not= "publish/.git" (str f))
+        (fs/delete-tree (str f)))))
   (fs/create-dirs "publish/pages"))
 
 (defn copy-css! []
@@ -47,7 +50,7 @@
                   symbol)
           _ (require sym)
           page (parse-page-body @(ns-resolve sym 'body))]
-      (spit (str "publish/" n ".html") page))))
+      (spit (str "publish/" (re-find #"(?<=pages/).+" n) ".html") page))))
 
 (defn update-publish-dir []
   (reset-publish-dir!)

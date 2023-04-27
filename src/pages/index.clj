@@ -12,13 +12,13 @@
    [:div.ctas
     [:div.platforms
      [:div.platform-button
-      [:img {:src "../assets/web.png"}]
+      [:img {:src "./assets/web.png"}]
       [:p "COMING SOON"]]
      [:div.platform-button
-      [:img {:src "../assets/apple.svg"}]
+      [:img {:src "./assets/apple.svg"}]
       [:p "COMING SOON"]]
      [:div.platform-button
-      [:img {:src "../assets/android.png"}]
+      [:img {:src "./assets/android.png"}]
       [:p "COMING SOON"]]]
     [:a.waitlist {:href "https://docs.google.com/forms/d/e/1FAIpQLScOSpyNqZNCFY-QvRAavbldD4CAe9yGYZiI1vzE9PUZVYihFA/viewform?usp=sf_link"}
      [:h3 "join the waitlist"]]]
