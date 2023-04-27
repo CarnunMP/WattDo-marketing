@@ -32,8 +32,7 @@
   (when (fs/exists? "publish")
     (doseq [f (fs/list-dir "publish")]
       (when (not= "publish/.git" (str f))
-        (fs/delete-tree (str f)))))
-  (fs/create-dirs "publish/pages"))
+        (fs/delete-tree (str f))))))
 
 (defn copy-css! []
   (fs/copy-tree "src/styles" "publish/styles"))
