@@ -21,4 +21,12 @@
       [:img {:src "../assets/android.png"}]
       [:p "COMING SOON"]]]
     [:a.waitlist {:href "https://docs.google.com/forms/d/e/1FAIpQLScOSpyNqZNCFY-QvRAavbldD4CAe9yGYZiI1vzE9PUZVYihFA/viewform?usp=sf_link"}
-     [:h3 "join the waitlist"]]]])
+     [:h3 "join the waitlist"]]]
+   [:div.features
+    (core/feature {:heading "foo", :text "bar baz etc."}
+                  {:text "fkladsjdlfk;asjd"
+                   :tags [:foo.bar/baz]})
+    (core/feature {:heading "foo", :text "bar baz etc."}
+                  {:text "fkladsjdlfk;asjd"
+                   :tags [:foo.bar/baz]}
+                  false)]])

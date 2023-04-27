@@ -23,3 +23,15 @@
    (when link
      [:a {:href link}
       link])])
+
+(defn feature
+  ([feature-args card-args] (feature feature-args card-args true))
+  ([{:keys [heading text]} card-args left?]
+   [:div {:class (str "feature " (if left? "l" "r"))}
+    (when left?
+      (card card-args))
+    [:div.text
+     [:h2 heading]
+     [:p text]]
+    (when-not left?
+      (card card-args))]))
