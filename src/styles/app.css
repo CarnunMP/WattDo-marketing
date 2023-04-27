@@ -8,6 +8,7 @@
 
 html {
   font-size: 24px;
+  font-family: 'Electrolize', sans-serif;
 }
 
 body {
@@ -25,6 +26,9 @@ h3 {
   font-size: 1.5rem;
 }
 
+
+/*** HEADER ***/
+
 div.header {
   background: var(--dark-2);
   margin-bottom: 1rem;
@@ -41,4 +45,51 @@ div.header div.nav {
 
 div.header div.nav a {
   margin: 0 0.5rem;
+}
+
+
+/*** CARDS ***/
+
+div.card {
+  width: 13rem;
+  height: 13rem;
+  border: 3px solid var(--light-1);
+  border-radius: 5px;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.card p.text {
+  text-align: center;
+}
+
+div.card div.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.tag {
+  border: 3px solid var(--light-1);
+  border-radius: 500px;
+  padding: 0.2rem 0.4rem;
+  font-size: 20px;
+  margin: 0.2rem 0.2rem;
+}
+
+/*** HOMEPAGE  ***/
+
+div.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+div.banner h1 {
+  margin-bottom: 1rem;
 }

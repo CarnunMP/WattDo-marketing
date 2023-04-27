@@ -4,7 +4,7 @@
 
 (defn watch []
   (fw/watch "."
-            (fn [{:keys [type path] :as _event}]
+            (fn [{:keys [type _path] :as _event}]
               (when (= :write type)
                 (println "Write detected. Regenerating pages.")
                 (shell "bb gen")

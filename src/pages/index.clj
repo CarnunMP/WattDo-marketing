@@ -5,7 +5,7 @@
 (def body
   [:body
    core/header
-   [:div
-    (for [i (range 3)]
-      [:h1 (str i ": Using Bootleg From Babashka")])
-    [:p "This is a demo"]]])
+   [:div.banner
+    [:h1 "WattDo?⚡"]
+    (core/card {:text "capture and direct moments of inspiration towards ambitious, emergent ends"
+                :tags [:fun :flow :productivity]})]])
