@@ -4,4 +4,4 @@
 (defn tag->str [tag]
   {:pre [(keyword tag)]}
   (-> (str tag)
-      (str/replace #":|\.|/" {":" "#", "." "→", "/" "→"})))
+      (str/replace #":|\.|/" {":" "#", "." "➡", "/" "➡"})))
