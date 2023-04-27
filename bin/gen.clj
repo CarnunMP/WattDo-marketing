@@ -31,7 +31,7 @@
 (defn reset-publish-dir! []
   (when (fs/exists? "publish")
     (doseq [f (fs/list-dir "publish")]
-      (when (not= "publish/.git" (str f))
+      (when-not (#{"publish/.git" "publish/CNAME"} (str f))
         (fs/delete-tree (str f))))))
 
 (defn copy-css! []
