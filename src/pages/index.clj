@@ -20,5 +20,5 @@
      [:div.platform-button
       [:img {:src "../assets/android.png"}]
       [:p "COMING SOON"]]]
-    [:a.waitlist {:href "https://iphg8uqckwl.typeform.com/to/HeB32ndu"}
+    [:a.waitlist {:href "https://docs.google.com/forms/d/e/1FAIpQLScOSpyNqZNCFY-QvRAavbldD4CAe9yGYZiI1vzE9PUZVYihFA/viewform?usp=sf_link"}
      [:h3 "join the waitlist"]]]])
