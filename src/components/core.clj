@@ -16,7 +16,7 @@
 
 (defn card [{:keys [text tags link]}]
   [:div.card
-   [:p.text text]
+   [:h3.text text]
    [:div.tags
     (for [t tags]
       (tag t))]
