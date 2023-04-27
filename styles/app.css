@@ -1,0 +1,198 @@
+:root {
+  --dark-1: #00020a;
+  --dark-2: #2f2f2f;
+  --light-1: #f7f7ff;
+  --yellow-1: #ffca22;
+  --red-1: #c3423f;
+}
+
+html {
+  font-size: 24px;
+  font-family: 'Electrolize', sans-serif;
+
+  /* might need to remove later! :P */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+body {
+  background-color: var(--dark-1);
+  color: var(--light-1);
+
+  /* FIXME: temporary, for MVP without 'features' or 'roadmapbe' */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+
+/*** HEADER ***/
+
+div.header {
+  /*background: var(--dark-2);*/
+  margin-bottom: 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+div.header div.nav {
+  display: flex;
+}
+
+div.header div.nav a {
+  margin: 0 0.5rem;
+}
+
+
+/*** CARDS ***/
+
+div.card {
+  width: 20rem;
+  height: 20rem;
+  background: var(--dark-1);
+  border: 4px solid var(--light-1);
+  border-radius: 5px;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.card h3.text {
+  text-align: center;
+}
+
+div.card div.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.tag {
+  border: 3px solid var(--light-1);
+  border-radius: 500px;
+  padding: 0.2rem 0.4rem;
+  margin: 0.2rem 0.2rem;
+}
+
+/*** HOMEPAGE  ***/
+
+div.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 4rem 0; */
+  margin-bottom: 4rem;
+}
+
+div.banner h1 {
+  margin-bottom: 1rem;
+}
+
+div.ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+div.ctas div.platforms {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+div.ctas div.platforms div.platform-button {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* to ensure "COMING SOON" doesn't wrap */
+div.ctas div.platforms div.platform-button:first-of-type {
+  width: 8rem;
+}
+
+div.platform-button p {
+  position: absolute;
+}
+
+div.platform-button img {
+  height: 100%;
+  margin: 0 1rem;
+  filter: brightness(0.2);
+}
+
+div.ctas a.waitlist {
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  background: var(--yellow-1);
+  color: var(--dark-1);
+}
+
+div.features {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+div.feature {
+  background: var(--dark-2);
+  width: 40rem;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 2rem 0;
+}
+
+div.feature div.card {
+  position: relative;
+}
+
+div.feature.l {
+  left: -10%;
+}
+
+div.feature.l div.card {
+  left: -3rem;
+}
+
+div.feature.r {
+  right: -10%;
+  padding-left: 3rem;
+}
+
+div.feature.r div.card {
+  right: -3rem;
+}
+
+div.feature div.text {
+  height: 70%;
+  flex-grow: 1;
+}
+
+div.feature div.text h2 {
+  margin-bottom: 2rem;
+}
