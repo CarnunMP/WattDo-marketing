@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 24px;
+  font-size: 22px;
   font-family: 'Electrolize', sans-serif;
 
   /* might need to remove later! :P */
@@ -63,6 +63,12 @@ div.header div.nav a {
 
 /*** CARDS ***/
 
+div.cards {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 div.card {
   width: 20rem;
   height: 20rem;
@@ -75,6 +81,12 @@ div.card {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  display: none;
+}
+
+div.card.visible {
+  display: flex;
 }
 
 div.card .text {
@@ -94,6 +106,15 @@ div.tag {
   margin: 0.2rem 0.2rem;
 }
 
+div.arrow {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+div.arrow:hover {
+  color: var(--yellow-1);
+}
+
 /*** HOMEPAGE  ***/
 
 div.banner {
@@ -101,27 +122,54 @@ div.banner {
   flex-direction: column;
   align-items: center;
   /* margin: 4rem 0; */
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 div.banner h1 {
   margin-bottom: 1rem;
 }
 
-div.ctas {
+div.main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-div.ctas div.platforms {
+div.later {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-div.ctas div.platforms div.platform-button {
+div.mvp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+div.mvp h3 {
+  margin-bottom: 0.5rem;
+}
+
+div.mvp div.buttons {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+div.mvp div.buttons h1 {
+  margin: 0 1rem 0 0.8rem;;
+}
+
+div.mvp div.buttons div.platform-button:last-of-type img {
+  position: relative;
+  bottom: 0.4rem;
+}
+
+div.main div.platform-button {
   height: 4rem;
   display: flex;
   justify-content: center;
@@ -130,22 +178,17 @@ div.ctas div.platforms div.platform-button {
   margin: 0.5rem;
 }
 
-/* to ensure "COMING SOON" doesn't wrap */
-div.ctas div.platforms div.platform-button:first-of-type {
-  width: 8rem;
-}
-
-div.platform-button p {
+div.platform-button p, div.platform-button h3 {
   position: absolute;
 }
 
-div.platform-button img {
+/*div.later*/ div.platform-button img {
   height: 100%;
   margin: 0 1rem;
   filter: brightness(0.2);
 }
 
-div.ctas a.waitlist {
+div.main a.waitlist {
   border-radius: 10px;
   padding: 1rem;
   text-decoration: none;
@@ -205,6 +248,18 @@ div.feature div.text h2 {
 /* mobile */
 
 @media screen and (max-width: 700px) {
+  div.cards div.arrow.left {
+    position: absolute;
+    bottom: -2rem;
+    left: 4.2rem;
+  }
+
+  div.cards div.arrow.right {
+    position: absolute;
+    bottom: -2rem;
+    right: 4.2rem;
+  }
+
   div.card {
     width: 12rem;
     height: 12rem;
@@ -220,5 +275,15 @@ div.feature div.text h2 {
 
   div.tag {
     font-size: 0.7rem;
+  }
+
+  div.arrow h2 {
+    font-size: 1.5rem;
+  }
+
+  div.mvp div.buttons h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-left: -0.4rem;
   }
 }
