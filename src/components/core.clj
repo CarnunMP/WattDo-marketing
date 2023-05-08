@@ -14,8 +14,9 @@
   [:div.tag
    [:p (tag->str tag)]])
 
-(defn card [{:keys [text tags link]}]
-  [:div.card
+(defn card [{:keys [text tags link visible?]}]
+  [:div (cond-> {:class "card"}
+          visible? (update :class str " visible"))
    [:h3.text text]
    [:div.tags
     (for [t tags]
