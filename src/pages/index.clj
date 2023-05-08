@@ -8,7 +8,7 @@
                 {:text "capture and direct moments of inspiration towards ambitious, emergent ends"
                  :tags [:explore :motivate]}
                 {:text "climb mountains: one small, happy step at a time"
-                 :tags [:projects]}])
+                 :tags [:projects :long-games]}])
 
 ;; TODO: Scittle would be nicer! :P
 (defn move-carosel-fn [d]
@@ -31,17 +31,24 @@
        (core/card args))
      [:div.arrow.right {:onclick (move-carosel-fn :right)}
       [:h2 "➡"]]]]
-   [:div.ctas
-    [:div.platforms
-     [:div.platform-button
-      [:img {:src "./assets/web.png"}]
-      [:p "COMING SOON"]]
+   [:div.main
+    [:div.later
      [:div.platform-button
       [:img {:src "./assets/apple.svg"}]
       [:p "COMING SOON"]]
      [:div.platform-button
       [:img {:src "./assets/android.png"}]
       [:p "COMING SOON"]]]
+    [:div.mvp
+     [:h3 "COMING SOONER"]
+     [:div.buttons
+      [:div.platform-button
+       [:img {:src "./assets/web.png"}]
+       [:h3 "web app"]]
+      [:h1 "+"]
+      [:div.platform-button
+       [:img {:src "./assets/extension.png"}]
+       [:h3 "extension"]]]]
     [:a.waitlist {:href "https://docs.google.com/forms/d/e/1FAIpQLScOSpyNqZNCFY-QvRAavbldD4CAe9yGYZiI1vzE9PUZVYihFA/viewform?usp=sf_link"}
      [:h3 "join the waitlist"]]]
    #_[:div.features
