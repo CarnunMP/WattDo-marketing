@@ -63,6 +63,11 @@ div.header div.nav a {
 
 /*** CARDS ***/
 
+div.cards {
+  display: flex;
+  align-items: center;
+}
+
 div.card {
   width: 20rem;
   height: 20rem;
@@ -75,6 +80,12 @@ div.card {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  display: none;
+}
+
+div.card.visible {
+  display: flex;
 }
 
 div.card .text {
@@ -92,6 +103,15 @@ div.tag {
   border-radius: 500px;
   padding: 0.2rem 0.4rem;
   margin: 0.2rem 0.2rem;
+}
+
+div.arrow {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+div.arrow:hover {
+  color: var(--yellow-1);
 }
 
 /*** HOMEPAGE  ***/
