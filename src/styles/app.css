@@ -66,6 +66,7 @@ div.header div.nav a {
 div.cards {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 div.card {
@@ -247,6 +248,18 @@ div.feature div.text h2 {
 /* mobile */
 
 @media screen and (max-width: 700px) {
+  div.cards div.arrow.left {
+    position: absolute;
+    bottom: -2rem;
+    left: 4.2rem;
+  }
+
+  div.cards div.arrow.right {
+    position: absolute;
+    bottom: -2rem;
+    right: 4.2rem;
+  }
+
   div.card {
     width: 12rem;
     height: 12rem;
@@ -262,5 +275,15 @@ div.feature div.text h2 {
 
   div.tag {
     font-size: 0.7rem;
+  }
+
+  div.arrow h2 {
+    font-size: 1.5rem;
+  }
+
+  div.mvp div.buttons h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    margin-left: -0.4rem;
   }
 }
