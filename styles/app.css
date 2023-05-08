@@ -254,6 +254,10 @@ div.feature div.text h2 {
     left: 4.2rem;
   }
 
+  div.arrow h2 {
+    font-size: 1.5rem !important;
+  }
+
   div.cards div.arrow.right {
     position: absolute;
     bottom: -2rem;
@@ -275,10 +279,6 @@ div.feature div.text h2 {
 
   div.tag {
     font-size: 0.7rem;
-  }
-
-  div.arrow h2 {
-    font-size: 1.5rem;
   }
 
   div.mvp div.buttons h1 {
