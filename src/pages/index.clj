@@ -23,7 +23,7 @@
   [:body
    #_core/header
    [:div.banner
-    [:h1 "WattDo?⚡"]
+    [:h1 "watt.do⚡"]
     [:div.cards {:data-visible-n 0}
      [:div.arrow.left {:onclick (move-carosel-fn :left)}
       [:h2 "⬅"]]
